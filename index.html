@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kawaii Chat Interface</title>
+<style>
+body {
+    background-color: #ffffff; /* Requested white background */
+    font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Kaku Gothic ProN", "sans-serif";
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: 0;
+}
+.chat-container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+/* Message Row Base */
+.message-row {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+/* Profile Pictures */
+.profile-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+/* Received (Left Side) */
+.received {
+    justify-content: flex-start;
+}
+.received .bubble {
+    background-color: #fff;
+    border: 1px solid #ffccd5;
+    margin-left: 12px;
+    border-radius: 18px;
+    position: relative;
+}
+/* Tail for Received */
+.received .bubble::before {
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: 10px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 10px solid #ffccd5;
+}
+.received .bubble::after {
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: 10px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 10px solid #fff;
+}
+/* Sent (Right Side) */
+.sent {
+    justify-content: flex-end;
+}
+.sent .bubble {
+    background-color: #ffeef2; /* Light pink tint */
+    border: 1px solid #ffccd5;
+    margin-right: 12px;
+    border-radius: 18px;
+    position: relative;
+}
+/* Tail for Sent */
+.sent .bubble::before {
+    content: "";
+    position: absolute;
+    right: -8px;
+    top: 10px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 10px solid #ffccd5;
+}
+.sent .bubble::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: 10px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 10px solid #ffeef2;
+}
+/* Bubble Content */
+.bubble {
+    max-width: 70%;
+    padding: 8px 15px;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+}
+/* Meta Info (Time & Read Status) */
+.meta {
+    font-size: 11px;
+    color: #ff99aa;
+    align-self: flex-end;
+    margin: 0 5px 2px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.read-status {
+    font-weight: bold;
+    margin-bottom: -2px;
+}
+/* Decoration Icons (Carrots) - Unused CSS class in provided HTML */
+.carrot {
+    width: 18px;
+    height: 18px;
+    margin-left: 5px;
+}
+</style>
+</head>
+<body>
+<div class="chat-container">
+    <div class="message-row received">
+        <div class="profile-pic" style="background-image: url('https://i.pinimg.com/736x/cd/6f/25/cd6f253528ee8ed9753d4c2ae3725769.jpg');"></div>
+        <div class="bubble"> 最近会えてないね 😣 </div>
+        <div class="meta">
+            <span>0:52</span>
+        </div>
+    </div>
+    <div class="message-row sent">
+        <div class="meta">
+            <span class="read-status">既読</span>
+            <span>0:52</span>
+        </div>
+        <div class="bubble"> そういえばそうだね！！ 🥕 </div>
+        <div class="profile-pic" style="background-image: url('https://i.pinimg.com/736x/2c/cc/ed/2ccced2bed199f00f4403e5145af2ee4.jpg');"></div>
+    </div>
+    <div class="message-row sent">
+        <div class="meta">
+            <span class="read-status">既読</span>
+            <span>0:52</span>
+        </div>
+        <div class="bubble"> 会わなくちゃね！ 🥕 </div>
+        <div class="profile-pic" style="background-image: url('https://i.pinimg.com/736x/2c/cc/ed/2ccced2bed199f00f4403e5145af2ee4.jpg');"></div>
+    </div>
+    <div class="message-row received">
+        <div class="profile-pic" style="background-image: url('https://i.pinimg.com/736x/cd/6f/25/cd6f253528ee8ed9753d4c2ae3725769.jpg');"></div>
+        <div class="bubble"> 寂しい～～ 😢💔💔 </div>
+        <div class="meta">
+            <span>0:53</span>
+        </div>
+    </div>
+    <div class="message-row sent">
+        <div class="meta">
+            <span class="read-status">既読</span>
+            <span>0:53</span>
+        </div>
+        <div class="bubble"> 10日なら会えるかも！ 🥕 </div>
+        <!-- FIXED: Class name was a URL, changed to "profile-pic" -->
+        <div class="profile-pic" style="background-image: url('https://i.pinimg.com/736x/2c/cc/ed/2ccced2bed199f00f4403e5145af2ee4.jpg');"></div>
+    </div>
+</div>
+</body>
+</html>
